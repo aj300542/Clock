@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <title>数字时钟</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=3.5, user-scalable=yes">
     <style>
         body {
             color: rgb(167, 137, 94); /* 将背景颜色设置为色 */
@@ -50,22 +49,7 @@
             // 一秒刷新一次，但是刚开始会出现全0，是因为一秒之后才刷新
             setInterval(Ticker, 1000);
         };
-    </script>
-    <script>
-        !function(n) {
-            var e = n.document,
-                t = e.documentElement,
-                i = 640, // 假设手机屏幕最大宽度为 640px
-                d = i / 100,
-                o = "orientationchange" in n ? "orientationchange" : "resize",
-                a = function() {
-                    var n = t.clientWidth || 320;
-                    n > 640 && (n = 640);
-                    t.style.fontSize = n / d + "px";
-                };
-            e.addEventListener && (n.addEventListener(o, a, !1), e.addEventListener("DOMContentLoaded", a, !1));
-        }(window);
-    </script>
+    </script>     
 </head>
 <body>
     <!-- 这里放置你的数字时钟图片 -->
