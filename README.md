@@ -3,3 +3,5 @@
  You can press the F11 key on your keyboard to enter full-screen mode at any time.
  If you feel the nixie tube light are too strong, press the button upper right. 
  If you want to turn on the light, refresh the page useing F5.
+ project link: https://aj300542.github.io/Clock/
+ 
