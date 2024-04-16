@@ -1,37 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>数字时钟</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="script/wakelock.js"></script>
     <style>
         /* 添加一个按钮用于调整亮度 */
         #brightnessButton {
             position: fixed;
-            top: 10px;
-            right: 10px;
-            padding: 10px;
+            top: 1vh;
+            right: 1vh;
+            padding: 1vh;
             background-color: #000000;
             color: #fff;
             cursor: pointer;
         }
     </style>
     <style>
-        /* 添加一个按钮用于调整亮度 */
         #aboutme {
             position: fixed;
-            down: 50px;
-            right: 10px;
-            padding: 7px;
+            top: 56.7vh;
+            right: 1vh;
+            font-size: 1.5vh;
+            padding: 1vh;
             background-color: #000000;
-            color: #fff;
+            color: #fb7c00;
             cursor: pointer;
+            z-index: 888;
         }
-    </style>   
+    </style>
     <style>
         body {
-            color: rgb(0, 0, 0); /* 将背景颜色设置为色 */
-            background: rgb(0, 0, 0); /* 设置文字颜色为色 */
+            color: rgb(0, 0, 0);
+            /* 将背景颜色设置为色 */
+            background: rgb(0, 0, 0);
+            /* 设置文字颜色为色 */
             text-align: center;
             font-size: 180px;
             display: flex;
@@ -76,10 +81,11 @@
         };
     </script>
 </head>
+
 <body>
-    <button id="brightnessButton"><span style="color:rgb(68, 44, 16)">darker</span></button>
+    <button id="brightnessButton"><span style="color:#834100;)">darker</span></button>
     <a href="https://aj300542.github.io/">
-        <button id="aboutme"><span style="color:rgb(68, 44, 16)">aj</span></button>
+        <button id="aboutme"><span style="color:#834100;)">aj300</span></button>
     </a>
     <script>
         const button = document.getElementById('brightnessButton');
@@ -90,13 +96,14 @@
             brightness -= 0.1;
             document.body.style.filter = `brightness(${brightness})`;
         });
-    </script> 
+    </script>
     <!-- 这里放置你的数字时钟图片 -->
-    <img src="img/0.png" alt="0" />  :
-    <img src="img/0.png" alt="0" />  :
-    <img src="img/0.png" alt="0" />  :
-    <img src="img/0.png" alt="0" />  :
-    <img src="img/0.png" alt="0" />  :
+    <img src="img/0.png" alt="0" /> :
+    <img src="img/0.png" alt="0" /> :
+    <img src="img/0.png" alt="0" /> :
+    <img src="img/0.png" alt="0" /> :
+    <img src="img/0.png" alt="0" /> :
     <img src="img/0.png" alt="0" />
 </body>
+
 </html>
