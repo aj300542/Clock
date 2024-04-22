@@ -192,6 +192,8 @@
                 } else if (elem.msRequestFullscreen) { /* IE/Edge */
                     elem.msRequestFullscreen();
                 }
+                // 在全屏模式下，将亮度的设置应用到全屏元素上
+                elem.style.filter = `brightness(${brightness})`;
             } else {
                 if (document.exitFullscreen) {
                     document.exitFullscreen();
@@ -202,6 +204,8 @@
                 } else if (document.msExitFullscreen) { /* IE/Edge */
                     document.msExitFullscreen();
                 }
+                // 退出全屏模式时，将亮度的设置应用到body元素上
+                document.body.style.filter = `brightness(${brightness})`;
             }
         }
     </script>
