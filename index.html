@@ -3,10 +3,10 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>数字时钟</title>
+    <title>NixieClock</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="script/wakelock.js"></script>
     <link rel="shortcut icon" href="nixie.ico">
+    <script src="script/wakelock.js"></script>
     <style>
         /* 添加一个按钮用于调整亮度 */
         #brightnessButton {
@@ -20,9 +20,9 @@
         }
     </style>
     <style>
-        #aboutme {
+        #aboutme,
+        #fullscreenbutt {
             position: fixed;
-            top: 56.7vh;
             right: 1vh;
             font-size: 1.5vh;
             padding: 1vh;
@@ -31,26 +31,46 @@
             cursor: pointer;
             z-index: 888;
         }
+
+        #fullscreenbutt {
+            top: 48.7vh;
+        }
+
+        #aboutme {
+            top: 56.7vh;
+        }
     </style>
     <style>
         body {
-            color: rgb(0, 0, 0);
-            /* 将背景颜色设置为色 */
-            background: rgb(0, 0, 0);
-            /* 设置文字颜色为色 */
-            text-align: center;
-            font-size: 180px;
             display: flex;
             justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            color: rgb(0, 0, 0);
+            background: rgb(0, 0, 0);
+            text-align: center;
+            font-size: 180px;
+            justify-content: center;
+            vertical-align: ;
             align-items: center;
             height: 100vh;
             overflow: hidden;
         }
 
+        #content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
         img {
             width: 8vw;
-            height: auto;
+            height: 13vw;
             max-width: 100%;
+            margin: 2.5vw;
         }
     </style>
     <script>
@@ -85,9 +105,51 @@
 
 <body>
     <button id="brightnessButton"><span style="color:#834100;">darker</span></button>
+    <button id="fullscreenbutt" onclick="toggleFullScreen()"><span style="color: #fb7c00">fullsreen</span></button>
     <a href="https://aj300542.github.io/">
         <button id="aboutme"><span style="color:#834100;">aj300</span></button>
     </a>
+    <div id="content">
+
+        <img src="img/0.png" alt="0" />
+        <img src="img/0.png" alt="0" />
+        <img src="img/0.png" alt="0" />
+        <img src="img/0.png" alt="0" />
+        <img src="img/0.png" alt="0" />
+        <img src="img/0.png" alt="0" />
+    </div>
+    <script>
+        function zoomPage() {
+            // 在页面加载时放大页面
+            document.getElementsByTagName('countdown-Wrapper')[0].style.transform = 'scale(1.25)';
+        }
+
+        function toggleFullScreen() {
+            var elem = document.getElementById("content");
+
+            if (!document.fullscreenElement) {
+                if (elem.requestFullscreen) {
+                    elem.requestFullscreen();
+                } else if (elem.mozRequestFullScreen) { /* Firefox */
+                    elem.mozRequestFullScreen();
+                } else if (elem.webkitRequestFullscreen) { /* Chrome, Safari and Opera */
+                    elem.webkitRequestFullscreen();
+                } else if (elem.msRequestFullscreen) { /* IE/Edge */
+                    elem.msRequestFullscreen();
+                }
+            } else {
+                if (document.exitFullscreen) {
+                    document.exitFullscreen();
+                } else if (document.mozCancelFullScreen) { /* Firefox */
+                    document.mozCancelFullScreen();
+                } else if (document.webkitExitFullscreen) { /* Chrome, Safari and Opera */
+                    document.webkitExitFullscreen();
+                } else if (document.msExitFullscreen) { /* IE/Edge */
+                    document.msExitFullscreen();
+                }
+            }
+        }
+    </script>
     <script>
         const button = document.getElementById('brightnessButton');
         let brightness = 1; // 初始亮度为 100%
@@ -98,13 +160,7 @@
             document.body.style.filter = `brightness(${brightness})`;
         });
     </script>
-    <!-- 这里放置你的数字时钟图片 -->
-    <img src="img/0.png" alt="0" /> :
-    <img src="img/0.png" alt="0" /> :
-    <img src="img/0.png" alt="0" /> :
-    <img src="img/0.png" alt="0" /> :
-    <img src="img/0.png" alt="0" /> :
-    <img src="img/0.png" alt="0" />
+
 </body>
 
 </html>
