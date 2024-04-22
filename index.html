@@ -41,6 +41,15 @@
         }
     </style>
     <style>
+        @font-face {
+            font-family: 'Nixiebold-boldbig';
+            src: url('fonts/Nixiebold-boldbig.woff2') format('woff2'),
+                url('fonts/Nixiebold-boldbig.woff') format('woff'),
+                url('fonts/Nixiebold-boldbig.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
         body {
             display: flex;
             justify-content: center;
@@ -52,10 +61,10 @@
             text-align: center;
             font-size: 180px;
             justify-content: center;
-            vertical-align: ;
             align-items: center;
             height: 100vh;
             overflow: hidden;
+            font-family: 'Nixiebold-boldbig', Arial, sans-serif;
         }
 
         #content {
@@ -71,6 +80,28 @@
             height: 13vw;
             max-width: 100%;
             margin: 2.5vw;
+        }
+
+        .digitdota,
+        .digitdotb {
+            position: absolute;
+            top: 52vh;
+            font-size: 26vh;
+            width: 100vw;
+            display: flex;
+            line-height: 2vh;
+            justify-content: space-between;
+            color: rgb(105, 53, 0);
+            font-family: 'Nixiebold-boldbig', Arial, sans-serif;
+            z-index: 99;
+        }
+
+        .digitdota {
+            left: 32.5vw;
+        }
+
+        .digitdotb {
+            left: 58.6vw;
         }
     </style>
     <script>
@@ -109,8 +140,10 @@
     <a href="https://aj300542.github.io/">
         <button id="aboutme"><span style="color:#834100;">aj300</span></button>
     </a>
-    <div id="content">
 
+    <div id="content">
+        <div class="digitdota">:</div>
+        <div class="digitdotb">:</div>
         <img src="img/0.png" alt="0" />
         <img src="img/0.png" alt="0" />
         <img src="img/0.png" alt="0" />
